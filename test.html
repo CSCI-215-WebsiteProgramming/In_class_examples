@@ -2,29 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hello World</title>
-
-    <!-- Demonstrates that JavaScript can be ran from <head> section -->
-    <script>
-        alert("Hello World");
-    </script>
+    <title>Fahrenheit to Centigrade</title>
 </head>
-<body bgcolor="red">
+<body>
 
-<!-- Demonstrates that JavaScript can be ran from <body> section -->
 <script>
-    // notice how inside the <script> tag this comment has to be JavaScript style
-    alert("We are in the Body");
+    var degFahren = prompt("Enter the degrees in Fahrenheit", 50);
+    var degCent = 5/9 * (degFahren -32);
 
-    // This DECLARES to the var
-    var name;
+    alert(degCent);
 
-    // This ASSIGNS value to the var
-    name = "Keith Briggs"
-
-    // document is the handle to our web page
-    document.write("<p>" + name + "</p>")
-    //alert(name);
 </script>
 
 </body>
