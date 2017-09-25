@@ -7,8 +7,15 @@
 <body>
 
 <script>
+    // Defining the function. Not acutally calling it
+    function convert(degFahren) {
+        return 5/9 * (degFahren -32);
+    }
+
     var degFahren = prompt("Enter the degrees in Fahrenheit", 50);
-    var degCent = 5/9 * (degFahren -32);
+
+    // Calling the function and passing in the degFahren value provided by the user
+    var degCent = convert(degFahren);
 
     alert(degCent);
 
