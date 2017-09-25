@@ -2,22 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Fahrenheit to Centigrade</title>
+    <title>Data Type Conversion</title>
 </head>
 <body>
 
 <script>
-    // Defining the function. Not acutally calling it
-    function convert(degFahren) {
-        return 5/9 * (degFahren -32);
-    }
 
-    var degFahren = prompt("Enter the degrees in Fahrenheit", 50);
+    alert("abc" + parseInt(1 + 2));
 
-    // Calling the function and passing in the degFahren value provided by the user
-    var degCent = convert(degFahren);
+    alert(parseInt("abc"));
 
-    alert(degCent);
+    alert(parseInt("123abc"));
+
+    alert(parseInt("abc123"));
+
+    var x = 50;
+    var y = 50;
+    alert(x + y + "abc");
+    alert(x.toString() + y.toString() + "abc");
 
 </script>
 
