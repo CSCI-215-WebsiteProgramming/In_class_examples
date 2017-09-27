@@ -2,24 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Data Type Conversion</title>
+    <title>Arrays</title>
 </head>
 <body>
 
 <script>
+    var myArray = [];
+    myArray.push("Jeremy");
+    myArray[1] = "Paul";
+    myArray.push("John");
 
-    alert("abc" + parseInt(1 + 2));
+    document.write("myArray[0] =  " + myArray[0] + "<br />");
+    document.write("myArray[1] =  " + myArray[1] + "<br />");
+    document.write("myArray[2] =  " + myArray[2] + "<br />");
 
-    alert(parseInt("abc"));
+    myArray[2] = "Alice";
 
-    alert(parseInt("123abc"));
+    document.write("<br />");
 
-    alert(parseInt("abc123"));
+    document.write("myArray[0] =  " + myArray[0] + "<br />");
+    document.write("myArray[1] =  " + myArray[1] + "<br />");
+    document.write("myArray[2] =  " + myArray[2] + "<br />");
 
-    var x = 50;
-    var y = 50;
-    alert(x + y + "abc");
-    alert(x.toString() + y.toString() + "abc");
 
 </script>
 
