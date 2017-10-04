@@ -2,168 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>if statements</title>
+    <title>Loops</title>
 </head>
 <body>
 
 <script>
-    // Basic if statement
-    var name = 'xyz';
-    if(name == 'xyz') {
-        // Code to be executed
-        console.log("Basic if statement: name was xyz");
+    var declaredOutsideLoop = 0;
+
+    for(var i=0; i<10; i++) {
+        console.log("iteration: " + i);
+        declaredOutsideLoop += 1;
+
+        var declaredInsideLoop = 0;
+        declaredInsideLoop += declaredInsideLoop + 1;
     }
 
+    // i maintains scope even though declared inside loop
+    console.log("i: " + i);
 
-    // Basic if/else
-    if(name == 'yyy') {
-        console.log("Basic if/else: name was yyy");
-    } else {
-        console.log("Basic if/else: name was not yyy");
+    // declaredOutsideLoop changes value after each iteration
+    console.log("declaredOutsideLoop: " + declaredOutsideLoop);
+
+    // declaredInsideLoop resets after each iteration
+    console.log("declaredInsideLoop: " + declaredInsideLoop);
+
+
+    // for in example
+    var myArray = ['apple', 'pear', 'blueberry', 'strawberry'];
+    for(var index in myArray) {
+        document.write("I really like " + myArray[index] + '<br />');
     }
 
-
-    // Proof a conditional returns a boolean
-    var bool = 10 == 11;
-    console.log("10 == 11 is: " + bool);
-
-
-    // Example of a flag
-    if(bool) {
-        console.log("bool was true");
-    } else {
-        console.log("bool was false");
+    // while loop example
+    var number = 0;
+    while(number != 53) {
+        document.write("The new number is: " + number + '<br />');
+        number = Math.floor((Math.random() * 100) + 1);
     }
+    document.write("Exited loop on: " + number + '<br />');
 
 
-    // Example of conditional operator
-    var number = 100;
-    if(number > 50) {
-        // This would execute
-        console.log("number was greater than 50");
-    } else {
-        console.log("number was less than or equal to 50");
-    }
+    // do while loop example
+    var userAge;
 
-
-    // Example of function that returns a boolean
-    function isOnsale(item) {
-        if(item == 'widget1') {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    var itemInCart = 'widget1';
-    var cost = 5.00;
-    if(isOnsale(itemInCart)) {
-        // This would execute
-        cost = cost - (cost * .10);
-        console.log("isOnsale returned true and discount applied");
-    }
-
-
-    // Example of equality of value
-    if(5 == '5') {
-        // This would execute
-        console.log("5 equals equals '5'")
-    }
-
-
-    // Example of equality of value and type
-    if(5 === '5') {
-        console.log("5 equals equals equals '5'")
-    } else {
-        // This would execute
-        console.log("5 does not equals equals equals '5'")
-
-    }
-
-
-    // Conditional operators on array property
-    var myArray = ['1', '2', '3', 4, 5];
-    if(myArray.length > 0) {
-        // This would execute
-        console.log("We have elements in the array");
-    } else {
-        console.log("We do not have any elements in the array");
-    }
-
-
-    // Example of negative checking
-    if(3 != 4) {
-        // This would execute
-        console.log("The numbers do not match");
-    } else {
-        console.log("The numbers match");
-    }
-
-
-    // Example of stacking
-    var multiX = 0;
-    if(multiX > 0) {
-        console.log("multiX must be positive");
-    } else if(multiX < 0) {
-        console.log("multiX must be negative");
-    } else {
-        // This would execute
-        console.log("multiX must be zero");
-    }
-
-
-
-    // Example of multiple conditionals
-    var d = new Date();
-    var today = d.getDay();
-    var weHaveClass = true;
-
-    if(today == 5 && weHaveClass) {
-        console.log("We have lab today");
-    } else if(today == 0 || today == 6){
-        console.log("Today is a weekend and no class at all");
-    }
-
-
-    // Demonstration of variable scope
-    var x = 10;
-
-    if(true) {
-        var x = 'j';
-        console.log("x changed to j inside of if block");
-    }
-    console.log("Outside of if block, x value is: " + x);
-
-    function changeX() {
-        var x = 'I changed';
-        console.log("Inside of function x is: " + x);
-    }
-    changeX();
-    console.log("Outside of function x is: " + x);
-
-
-    function isInputValid(userInput) {
-        if(userInput[0] == '<') {
-            return false;
-        }
-
-        return true;
-    }
-
-
-
-
-    // Misc examples
-    var number = prompt("Enter a number", 50);
-
-    if(isNaN(number)) {
-        var msg = "You did not enter a number";
-        console.log(msg);
-        alert(msg);
-    } else {
-        var product = parseInt(number) * 500;
-        alert("The product is: " + product);
-    }
+    do {
+        userAge = prompt("Please enter your age", "");
+    } while (isNaN(userAge) == true)
 
 
 
