@@ -2,54 +2,57 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Loops</title>
+    <title>Dom</title>
 </head>
 <body>
 
 <script>
-    var declaredOutsideLoop = 0;
 
-    for(var i=0; i<10; i++) {
-        console.log("iteration: " + i);
-        declaredOutsideLoop += 1;
+    // JavaScript Object
+    var car = {
+        make: 'audi',
+        model: 'A4',
+        color: 'silver',
+        transmission: 'manual',
+        getCar: function () {
+            alert("You have a(n) " + this.make + ' ' + this.model);
+        },
+        getTrans: function () {
+            alert(this.transmission);
+        }
+    };
 
-        var declaredInsideLoop = 0;
-        declaredInsideLoop += declaredInsideLoop + 1;
-    }
+    // Calling a JavaScript property that is a method
+    car.getCar();
+    car.getTrans();
 
-    // i maintains scope even though declared inside loop
-    console.log("i: " + i);
+    // Calling a method without the '()' will not call the function
+    console.log(car.getTrans);
 
-    // declaredOutsideLoop changes value after each iteration
-    console.log("declaredOutsideLoop: " + declaredOutsideLoop);
+    // document is type 'object'
+    console.log('document is type of: ' + typeof (document));
 
-    // declaredInsideLoop resets after each iteration
-    console.log("declaredInsideLoop: " + declaredInsideLoop);
+    // Access the tag <title> and display the text
+    var mytitle = document.getElementsByTagName("title");
+    console.log('Current title is: ' + mytitle[0].text);
 
-
-    // for in example
-    var myArray = ['apple', 'pear', 'blueberry', 'strawberry'];
-    for(var index in myArray) {
-        document.write("I really like " + myArray[index] + '<br />');
-    }
-
-    // while loop example
-    var number = 0;
-    while(number != 53) {
-        document.write("The new number is: " + number + '<br />');
-        number = Math.floor((Math.random() * 100) + 1);
-    }
-    document.write("Exited loop on: " + number + '<br />');
-
-
-    // do while loop example
-    var userAge;
-
-    do {
-        userAge = prompt("Please enter your age", "");
-    } while (isNaN(userAge) == true)
+    // Change the text of <title>
+    mytitle[0].innerHTML = 'I Changed';
+    console.log("New title: " + mytitle[0].text);
 
 
+    // Demonstration on how to add elements to the <body>
+    var newText = document.createTextNode("This is my new text");
+    var hElement = document.createElement("h1");
+
+    hElement.appendChild(newText);
+    document.body.appendChild(hElement);
+
+    var anotherText = document.createTextNode("Another text");
+    var pElement = document.createElement('p');
+    pElement.appendChild(anotherText);
+
+    document.body.appendChild(pElement);
 
 </script>
 
