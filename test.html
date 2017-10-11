@@ -2,30 +2,49 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hello World</title>
+    <title>Animation</title>
 
-    <!-- Demonstrates that JavaScript can be ran from <head> section -->
-    <script>
-        alert("Hello World");
-    </script>
+    <style>
+        #divAdvert {
+            position: absolute;
+            font:12px Arial;
+            top: 4px;
+            left: 0px;
+        }
+    </style>
 </head>
-<body bgcolor="red">
+<body>
+    <div id="divAdvert">
+        Here is an advertisement.
+    </div>
 
-<!-- Demonstrates that JavaScript can be ran from <body> section -->
-<script>
-    // notice how inside the <script> tag this comment has to be JavaScript style
-    alert("We are in the Body");
+    <script>
+        var switchDirection = false;
 
-    // This DECLARES to the var
-    var name;
+        function doAnimation() {
+            var divAdvert = document.getElementById("divAdvert");
+            var currentLeft = divAdvert.offsetLeft;
+            var newLocation;
 
-    // This ASSIGNS value to the var
-    name = "Keith Briggs"
+            if(!switchDirection) {
+                newLocation = currentLeft + 2;
 
-    // document is the handle to our web page
-    document.write("<p>" + name + "</p>")
-    //alert(name);
-</script>
+                if(currentLeft >= 1400) {
+                    switchDirection = true;
+                }
+            } else {
+                newLocation = currentLeft -2;
+
+                if(currentLeft <= 0) {
+                    switchDirection = false;
+                }
+            }
+
+            divAdvert.style.left = newLocation + "px";
+        }
+
+        setInterval(doAnimation, 10);
+    </script>
 
 </body>
 </html>
