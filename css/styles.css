@@ -1,0 +1,12 @@
+p {
+    background-color: aquamarine;
+}
+
+#aboutMe {
+    background-color: cornflowerblue;
+}
+
+.new-style {
+    font-style: italic;
+    text-decoration: underline;
+}

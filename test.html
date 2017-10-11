@@ -2,59 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dom</title>
+    <title>FromJS</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
-
-<script>
-
-    // JavaScript Object
-    var car = {
-        make: 'audi',
-        model: 'A4',
-        color: 'silver',
-        transmission: 'manual',
-        getCar: function () {
-            alert("You have a(n) " + this.make + ' ' + this.model);
-        },
-        getTrans: function () {
-            alert(this.transmission);
-        }
-    };
-
-    // Calling a JavaScript property that is a method
-    car.getCar();
-    car.getTrans();
-
-    // Calling a method without the '()' will not call the function
-    console.log(car.getTrans);
-
-    // document is type 'object'
-    console.log('document is type of: ' + typeof (document));
-
-    // Access the tag <title> and display the text
-    var mytitle = document.getElementsByTagName("title");
-    console.log('Current title is: ' + mytitle[0].text);
-
-    // Change the text of <title>
-    mytitle[0].innerHTML = 'I Changed';
-    console.log("New title: " + mytitle[0].text);
-
-
-    // Demonstration on how to add elements to the <body>
-    var newText = document.createTextNode("This is my new text");
-    var hElement = document.createElement("h1");
-
-    hElement.appendChild(newText);
-    document.body.appendChild(hElement);
-
-    var anotherText = document.createTextNode("Another text");
-    var pElement = document.createElement('p');
-    pElement.appendChild(anotherText);
-
-    document.body.appendChild(pElement);
-
-</script>
-
+<script src="js/site.js"></script>
 </body>
 </html>
