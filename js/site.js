@@ -18,8 +18,6 @@ container.setAttribute('class', 'container');
 var row = document.createElement("div");
 row.setAttribute('class', 'row');
 
-var column1 = document.createElement('div');
-column1.setAttribute('class', 'four column');
 
 var pElement1 = document.createElement('p');
 pElement1.setAttribute('id', 'aboutMe');
@@ -27,6 +25,8 @@ pElement1.setAttribute('class', 'four columns');
 pElement1.appendChild(aboutMe);
 pElement1.style.backgroundColor = 'red';
 pElement1.style.color = 'white';
+
+// Demonstrates the use of className
 var classes = pElement1.getAttribute('class');
 pElement1.className = classes + ' ' + 'new-style';
 
