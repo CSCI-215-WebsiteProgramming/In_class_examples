@@ -1,12 +1,6 @@
-p {
-    background-color: aquamarine;
+.mouseover {
+    height: 20px;
+    width: 100px;
+    border: 2px solid #FF0000;
 }
 
-#aboutMe {
-    background-color: cornflowerblue;
-}
-
-.new-style {
-    font-style: italic;
-    text-decoration: underline;
-}
