@@ -4,3 +4,8 @@
     border: 2px solid #FF0000;
 }
 
+.drop-zone {
+    width: 300px;
+    padding: 20px;
+    border: 2px dashed #000000;
+}
