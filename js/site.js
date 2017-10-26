@@ -4,13 +4,17 @@ draggableElement.addEventListener('dragstart', function (event) {
     event.dataTransfer.setData('Draggable Content', event.target.id);
 });
 
+var numberOfDrags = 0;
 draggableElement.addEventListener('drag', function () {
     event.preventDefault();
     console.log('Stop dragging me...');
+    numberOfDrags++;
 });
 
 draggableElement.addEventListener('dragend', function () {
     console.log('Thank you');
+    console.log('Number of drags: ' + numberOfDrags);
+    numberOfDrags = 0;
 });
 
 var dropzone = document.getElementById('dropzone');
