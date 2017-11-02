@@ -4,46 +4,37 @@
     <meta charset="UTF-8">
     <title>Animation</title>
 
-    <style>
-        #divAdvert {
-            position: absolute;
-            font:12px Arial;
-            top: 4px;
-            left: 0px;
-        }
-    </style>
 </head>
 <body>
-    <div id="divAdvert">
-        Here is an advertisement.
-    </div>
 
     <script>
-        var switchDirection = false;
+        // Arrays into json
+        var myArray = [];
+        myArray.push("Item 1");
+        myArray.push(2);
+        myArray.push({firstName: "Space", lastName: "Ship"});
 
-        function doAnimation() {
-            var divAdvert = document.getElementById("divAdvert");
-            var currentLeft = divAdvert.offsetLeft;
-            var newLocation;
+        console.log(JSON.stringify(myArray));
 
-            if(!switchDirection) {
-                newLocation = currentLeft + 2;
-
-                if(currentLeft >= 1400) {
-                    switchDirection = true;
-                }
-            } else {
-                newLocation = currentLeft -2;
-
-                if(currentLeft <= 0) {
-                    switchDirection = false;
-                }
+        // Create a JavaScript object
+        var person = {
+            firstName: 'John',
+            lastName: 'Doe',
+            age: 30,
+            getName: function () {
+                return this.firstName + " " + this.lastName;
             }
+        };
 
-            divAdvert.style.left = newLocation + "px";
-        }
+        console.log(person.getName());
 
-        setInterval(doAnimation, 10);
+        // Only the data is converted to JSON
+        var json = JSON.stringify(person);
+
+        console.log(json);
+
+        // Example paring json into a javascript object
+        console.log(JSON.parse(json));
     </script>
 
 </body>
