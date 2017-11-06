@@ -1,46 +1,25 @@
-
-var draggableElement = document.getElementById('drag');
-draggableElement.addEventListener('dragstart', function (event) {
-    event.dataTransfer.setData('Draggable Content', event.target.id);
-});
-
-var numberOfDrags = 0;
-draggableElement.addEventListener('drag', function () {
-    event.preventDefault();
-    console.log('Stop dragging me...');
-    numberOfDrags++;
-});
-
-draggableElement.addEventListener('dragend', function () {
-    console.log('Thank you');
-    console.log('Number of drags: ' + numberOfDrags);
-    numberOfDrags = 0;
-});
-
-var dropzone = document.getElementById('dropzone');
-
-dropzone.addEventListener("dragover", dragDropHandler);
-dropzone.addEventListener("drop", dragDropHandler);
-
-dropzone.addEventListener("dragleave", dragDropHandler);
-
-dropzone.addEventListener("dragleave", function () {
-    console.log("I have left the dropzone. event.type was: " + event.type);
-    dropstatus.innerHTML = "You have left the drop zone";
-});
-
-var dropstatus = document.getElementById('dropstatus');
-
-function dragDropHandler(event) {
-    event.preventDefault();
-
-    // This also works
-    if(event.type == 'dragleave') {
-        console.log("I have left the dropzone. event.type was: " + event.type);
-        dropstatus.innerHTML = "You have left the drop zone";
-    } else if(event.type == 'dragover') {
-        dropstatus.innerHTML = "You are over the dropzone";
-    } else if(event.type == 'drop') {
-        dropstatus.innerHTML = "You dropped something";
-    }
-}
+$(document).ready(function() {
+	// open external links in new window
+	$('a[href^="http://"]').attr('target','_blank');
+	
+	//position resources panel on screen
+	$('#resources').show().delay(500).animate({ left : '-25em' }, 250).animate({left:'-29em'},250);
+	
+	// resources panel
+	var panel=false;
+	$('.open').click(function() {
+		if (!panel) {
+			$(this).text('-');
+			$('#resources').animate({
+				left : 0
+			}, 250); // end animate
+			panel=true;
+		} else {
+			$(this).text('+');
+			$('#resources').animate({
+				left : '-29em'
+			}, 250); // end animate
+			panel=false;
+		}
+	});
+}); // end ready

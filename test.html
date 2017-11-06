@@ -1,20 +1,33 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:margin-top="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Event Object</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/skeleton.css">
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <meta charset="utf-8">
+    <title>Demo</title>
+
+    <!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    -->
+
+    <script src="jquery-3.2.1.slim.min.js"></script>
+
+    <style>
+        a.test {
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
+<a href="http://jquery.com/">jQuery</a>
 
-<div id='drag' draggable="true" >Draggable Content</div>
+<script>
 
-<div id="dropzone" class="drop-zone">Drop Zone</div>
-<div id="dropstatus"></div>
+    $( document ).ready(function() {
+        $( "a" ).click(function( event ) {
+            alert( "The link will no longer take you to jquery.com" );
+            event.preventDefault();
+        });
+    });
 
-
-<script src="js/site.js"></script>
+</script>
 </body>
 </html>
